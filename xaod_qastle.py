@@ -11,7 +11,8 @@ function_name = {
 
 my_file = open('xaod_branches.txt', 'r')
 collections = []
-print("(call ResultTTree (call Select (call Select (call EventDataset (list 'localds:bogus')) (lambda (list e) (list", end=' ')
+print("(call ResultTTree (call Select (call Select (call EventDataset (list 'localds:bogus')) (lambda (list e) (list",
+      end=' ')
 for line in my_file:
     collection = line.split('.')[0]
     function = ''
