@@ -11,7 +11,7 @@ function_name = {
 
 my_file = open('xaod_branches.txt', 'r')
 collections = []
-print("(call ResultTTree (call Select (call Select (call EventDataset (list 'localds:bogus')) (lambda (list e) (list")
+print("(call ResultTTree (call Select (call Select (call EventDataset (list 'localds:bogus')) (lambda (list e) (list", end=' ')
 for line in my_file:
     collection = line.split('.')[0]
     function = ''
@@ -20,9 +20,9 @@ for line in my_file:
             function = x
             break
     if not collection in collections:
-        print("(call (attr e '", function, "') '", collection, "')", sep='')
+        print("(call (attr e '", function, "') '", collection, "')", sep='', end= ' ')
         collections.append(collection)
-print("))) (lambda (list e) (list")
+print("))) (lambda (list e) (list", end=' ')
 
 my_file.seek(0)
 for line in my_file:
@@ -31,11 +31,11 @@ for line in my_file:
     col_name = line.split('.')[0].lower()
     attribute = line.split('.')[1].rstrip()
     print("(call (attr (subscript e ", subscript, ") 'Select') (lambda (list ", col_name,
-          ") (call (attr ", col_name, " '", attribute, "'))))", sep='')
-print ("))) (list")
+          ") (call (attr ", col_name, " '", attribute, "'))))", sep='', end= ' ')
+print ("))) (list", end=' ')
 
 my_file.seek(0)
 for line in my_file:
     out_name = line.split('.')[0].lower() + '_' + line.split('.')[1].rstrip()
-    print("'", out_name, "'", sep='')
+    print("'", out_name, "'", sep='', end=' ')
 print(") 'forkme' 'dude.root')")
